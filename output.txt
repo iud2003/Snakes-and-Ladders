@@ -1,0 +1,1112 @@
+=== MAZE TO SAVOR - ENHANCED UCSC MAZE RUNNER ===
+Welcome to the advanced three-floor maze adventure!
+Players A, B, and C compete with movement points and special effects.
+
+Enhanced Features:
+- Movement Points System (start with 100 points)
+- Cell consumption and bonus effects
+- Player capture mechanics
+- Bawana special area with food effects
+- Dynamic stair directions (change every 5 rounds)
+- Enhanced movement through stairs/poles
+
+Flag location: Floor 2, Position [2, 16]
+
+
+========== ROUND 1 ==========
+
+--- Player A's Turn ---
+Player A rolled 4 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 98 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 3 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 98 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 5 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 98 (throws: 0)
+
+=== ROUND 1 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 98 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 98 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 98 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 2 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 96 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 1 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 96 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 4 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 96 (throws: 0)
+
+=== ROUND 2 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 96 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 96 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 96 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 3 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 94 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 5 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 94 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 3 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 94 (throws: 0)
+
+=== ROUND 3 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 94 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 94 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 94 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 4 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 92 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 2 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 92 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 3 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 92 (throws: 0)
+
+=== ROUND 4 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 92 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 92 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 92 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 5 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes DOWN
+Stair 2 now goes DOWN
+Stair 3 now goes DOWN
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled 4 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 90 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 3 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 90 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 5 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 90 (throws: 0)
+
+=== ROUND 5 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 90 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 90 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 90 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 6 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 88 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 3 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 88 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 5 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 88 (throws: 0)
+
+=== ROUND 6 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 88 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 88 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 88 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 7 ==========
+
+--- Player A's Turn ---
+Player A rolled 3 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 86 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 3 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 86 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 4 to enter maze
+Player C stays in starting area
+Player C: Starting area [0, 9, 16] - MP: 86 (throws: 0)
+
+=== ROUND 7 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 86 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 86 (throws: 0)
+Player C: Starting area [0, 9, 16] - MP: 86 (throws: 0)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 8 ==========
+
+--- Player A's Turn ---
+Player A rolled 3 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 84 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 2 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 84 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled 6 to enter maze
+Player C entered the maze at [0, 9, 17]!
+Cell gave Player C bonus +2 movement points (now: 88)
+Player C: [0, 9, 17] facing East - MP: 88 (throws: 1)
+
+=== ROUND 8 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 84 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 84 (throws: 0)
+Player C: [0, 9, 17] facing East - MP: 88 (throws: 1)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 9 ==========
+
+--- Player A's Turn ---
+Player A rolled 4 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 82 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 1 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 82 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled movement: 6 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 17] with 86 movement points
+Player C: [0, 9, 17] facing East - MP: 86 (throws: 2)
+
+=== ROUND 9 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 82 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 82 (throws: 0)
+Player C: [0, 9, 17] facing East - MP: 86 (throws: 2)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 10 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes UP
+Stair 2 now goes UP
+Stair 3 now goes DOWN
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled 3 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 80 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled 4 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 80 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled movement: 1 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 17] with 84 movement points
+Player C: [0, 9, 17] facing East - MP: 84 (throws: 3)
+
+=== ROUND 10 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 80 (throws: 0)
+Player B: Starting area [0, 9, 8] - MP: 80 (throws: 0)
+Player C: [0, 9, 17] facing East - MP: 84 (throws: 3)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 11 ==========
+
+--- Player A's Turn ---
+Player A rolled 6 to enter maze
+Player A entered the maze at [0, 5, 12]!
+Cell gave Player A bonus +2 movement points (now: 82)
+Player A: [0, 5, 12] facing North - MP: 82 (throws: 1)
+
+--- Player B's Turn ---
+Player B rolled 4 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 78 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled direction dice 0Player C rolled movement: 5, direction: North
+Cell consumed 1 movement points from Player C (now: 83)
+Cell consumed 1 movement points from Player C (now: 82)
+Cell consumed 4 movement points from Player C (now: 78)
+Cell gave Player C bonus +1 movement points (now: 79)
+Player C moved to [0, 9, 12] with 79 movement points
+Player C: [0, 9, 12] facing North - MP: 79 (throws: 4)
+
+=== ROUND 11 GAME STATE ===
+Player A: [0, 5, 12] facing North - MP: 82 (throws: 1)
+Player B: Starting area [0, 9, 8] - MP: 78 (throws: 0)
+Player C: [0, 9, 12] facing North - MP: 79 (throws: 4)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 12 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 5 (continuing North)
+Cell consumed 4 movement points from Player A (now: 78)
+Cell consumed 2 movement points from Player A (now: 76)
+Cell gave Player A bonus +3 movement points (now: 79)
+Cell gave Player A bonus +5 movement points (now: 84)
+Cell consumed 1 movement points from Player A (now: 83)
+Player A moved to [0, 5, 7] with 83 movement points
+Player A: [0, 5, 7] facing North - MP: 83 (throws: 2)
+
+--- Player B's Turn ---
+Player B rolled 4 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 76 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled movement: 3 (continuing North)
+Cell consumed 3 movement points from Player C (now: 76)
+Cell consumed 4 movement points from Player C (now: 72)
+Player C moved to [0, 9, 9] with 72 movement points
+Player C: [0, 9, 9] facing North - MP: 72 (throws: 5)
+
+=== ROUND 12 GAME STATE ===
+Player A: [0, 5, 7] facing North - MP: 83 (throws: 2)
+Player B: Starting area [0, 9, 8] - MP: 76 (throws: 0)
+Player C: [0, 9, 9] facing North - MP: 72 (throws: 5)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 13 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 6 (continuing North)
+Cell consumed 1 movement points from Player A (now: 82)
+Player A blocked after 1 steps
+Player A moved to [0, 5, 6] with 80 movement points
+Player A: [0, 5, 6] facing North - MP: 80 (throws: 3)
+
+--- Player B's Turn ---
+Player B rolled 3 to enter maze
+Player B stays in starting area
+Player B: Starting area [0, 9, 8] - MP: 74 (throws: 0)
+
+--- Player C's Turn ---
+Player C rolled movement: 4 (continuing North)
+Cell gave Player C bonus +2 movement points (now: 74)
+Cell multiplied Player C movement points by 2 (now: 148)
+Cell gave Player C bonus +2 movement points (now: 150)
+Player C moved to [0, 9, 5] with 150 movement points
+Player C: [0, 9, 5] facing North - MP: 150 (throws: 6)
+
+=== ROUND 13 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 80 (throws: 3)
+Player B: Starting area [0, 9, 8] - MP: 74 (throws: 0)
+Player C: [0, 9, 5] facing North - MP: 150 (throws: 6)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 14 ==========
+
+--- Player A's Turn ---
+Player A rolled direction dice 4Player A rolled movement: 3, direction: Empty (keep current)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 78 movement points
+Player A: [0, 5, 6] facing North - MP: 78 (throws: 4)
+
+--- Player B's Turn ---
+Player B rolled 6 to enter maze
+Player B entered the maze at [0, 9, 7]!
+Cell multiplied Player B movement points by 2 (now: 148)
+Player B: [0, 9, 7] facing West - MP: 148 (throws: 1)
+
+--- Player C's Turn ---
+Player C rolled movement: 2 (continuing North)
+Cell consumed 1 movement points from Player C (now: 149)
+Player C moved to [0, 9, 3] with 149 movement points
+Player C: [0, 9, 3] facing North - MP: 149 (throws: 7)
+
+=== ROUND 14 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 78 (throws: 4)
+Player B: [0, 9, 7] facing West - MP: 148 (throws: 1)
+Player C: [0, 9, 3] facing North - MP: 149 (throws: 7)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 15 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes DOWN
+Stair 2 now goes DOWN
+Stair 3 now goes UP
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled movement: 4 (continuing North)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 76 movement points
+Player A: [0, 5, 6] facing North - MP: 76 (throws: 5)
+
+--- Player B's Turn ---
+Player B rolled movement: 1 (continuing West)
+Player B moved to [0, 8, 7] with 148 movement points
+Player B: [0, 8, 7] facing West - MP: 148 (throws: 2)
+
+--- Player C's Turn ---
+Player C rolled direction dice 1Player C rolled movement: 5, direction: East
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 147 movement points
+Player C: [0, 9, 3] facing East - MP: 147 (throws: 8)
+
+=== ROUND 15 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 76 (throws: 5)
+Player B: [0, 8, 7] facing West - MP: 148 (throws: 2)
+Player C: [0, 9, 3] facing East - MP: 147 (throws: 8)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 16 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 5 (continuing North)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 74 movement points
+Player A: [0, 5, 6] facing North - MP: 74 (throws: 6)
+
+--- Player B's Turn ---
+Player B rolled movement: 1 (continuing West)
+Cell gave Player B bonus +2 movement points (now: 150)
+Player B moved to [0, 7, 7] with 150 movement points
+Player B: [0, 7, 7] facing West - MP: 150 (throws: 3)
+
+--- Player C's Turn ---
+Player C rolled movement: 2 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 145 movement points
+Player C: [0, 9, 3] facing East - MP: 145 (throws: 9)
+
+=== ROUND 16 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 74 (throws: 6)
+Player B: [0, 7, 7] facing West - MP: 150 (throws: 3)
+Player C: [0, 9, 3] facing East - MP: 145 (throws: 9)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 17 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 4 (continuing North)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 72 movement points
+Player A: [0, 5, 6] facing North - MP: 72 (throws: 7)
+
+--- Player B's Turn ---
+Player B rolled direction dice 2Player B rolled movement: 5, direction: South
+Cell gave Player B bonus +2 movement points (now: 152)
+Cell consumed 4 movement points from Player B (now: 148)
+Cell consumed 4 movement points from Player B (now: 144)
+Player B moved to [0, 7, 12] with 144 movement points
+Player B: [0, 7, 12] facing South - MP: 144 (throws: 4)
+
+--- Player C's Turn ---
+Player C rolled movement: 4 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 143 movement points
+Player C: [0, 9, 3] facing East - MP: 143 (throws: 10)
+
+=== ROUND 17 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 72 (throws: 7)
+Player B: [0, 7, 12] facing South - MP: 144 (throws: 4)
+Player C: [0, 9, 3] facing East - MP: 143 (throws: 10)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 18 ==========
+
+--- Player A's Turn ---
+Player A rolled direction dice 4Player A rolled movement: 1, direction: Empty (keep current)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 70 movement points
+Player A: [0, 5, 6] facing North - MP: 70 (throws: 8)
+
+--- Player B's Turn ---
+Player B rolled movement: 4 (continuing South)
+Cell consumed 3 movement points from Player B (now: 141)
+Cell consumed 3 movement points from Player B (now: 138)
+Cell gave Player B bonus +2 movement points (now: 140)
+Player B used stairs up! Now at [2, 7, 15], 1 steps remaining
+Cell consumed 2 movement points from Player B (now: 138)
+Player B moved to [2, 7, 16] with 138 movement points
+Player B: [2, 7, 16] facing South - MP: 138 (throws: 5)
+
+--- Player C's Turn ---
+Player C rolled movement: 5 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 141 movement points
+Player C: [0, 9, 3] facing East - MP: 141 (throws: 11)
+
+=== ROUND 18 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 70 (throws: 8)
+Player B: [2, 7, 16] facing South - MP: 138 (throws: 5)
+Player C: [0, 9, 3] facing East - MP: 141 (throws: 11)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 19 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 4 (continuing North)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 68 movement points
+Player A: [0, 5, 6] facing North - MP: 68 (throws: 9)
+
+--- Player B's Turn ---
+Player B rolled movement: 6 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 136 movement points
+Player B: [2, 7, 16] facing South - MP: 136 (throws: 6)
+
+--- Player C's Turn ---
+Player C rolled direction dice 4Player C rolled movement: 4, direction: Empty (keep current)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 139 movement points
+Player C: [0, 9, 3] facing East - MP: 139 (throws: 12)
+
+=== ROUND 19 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 68 (throws: 9)
+Player B: [2, 7, 16] facing South - MP: 136 (throws: 6)
+Player C: [0, 9, 3] facing East - MP: 139 (throws: 12)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 20 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes UP
+Stair 2 now goes DOWN
+Stair 3 now goes UP
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled movement: 5 (continuing North)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 66 movement points
+Player A: [0, 5, 6] facing North - MP: 66 (throws: 10)
+
+--- Player B's Turn ---
+Player B rolled movement: 6 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 134 movement points
+Player B: [2, 7, 16] facing South - MP: 134 (throws: 7)
+
+--- Player C's Turn ---
+Player C rolled movement: 1 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 137 movement points
+Player C: [0, 9, 3] facing East - MP: 137 (throws: 13)
+
+=== ROUND 20 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 66 (throws: 10)
+Player B: [2, 7, 16] facing South - MP: 134 (throws: 7)
+Player C: [0, 9, 3] facing East - MP: 137 (throws: 13)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 21 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 4 (continuing North)
+Player A blocked after 0 steps
+Player A moved to [0, 5, 6] with 64 movement points
+Player A: [0, 5, 6] facing North - MP: 64 (throws: 11)
+
+--- Player B's Turn ---
+Player B rolled direction dice 4Player B rolled movement: 3, direction: Empty (keep current)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 132 movement points
+Player B: [2, 7, 16] facing South - MP: 132 (throws: 8)
+
+--- Player C's Turn ---
+Player C rolled movement: 6 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 135 movement points
+Player C: [0, 9, 3] facing East - MP: 135 (throws: 14)
+
+=== ROUND 21 GAME STATE ===
+Player A: [0, 5, 6] facing North - MP: 64 (throws: 11)
+Player B: [2, 7, 16] facing South - MP: 132 (throws: 8)
+Player C: [0, 9, 3] facing East - MP: 135 (throws: 14)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 22 ==========
+
+--- Player A's Turn ---
+Player A rolled direction dice 3Player A rolled movement: 1, direction: West
+Cell consumed 1 movement points from Player A (now: 63)
+Player A moved to [0, 4, 6] with 63 movement points
+Player A: [0, 4, 6] facing West - MP: 63 (throws: 12)
+
+--- Player B's Turn ---
+Player B rolled movement: 1 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 130 movement points
+Player B: [2, 7, 16] facing South - MP: 130 (throws: 9)
+
+--- Player C's Turn ---
+Player C rolled movement: 5 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 133 movement points
+Player C: [0, 9, 3] facing East - MP: 133 (throws: 15)
+
+=== ROUND 22 GAME STATE ===
+Player A: [0, 4, 6] facing West - MP: 63 (throws: 12)
+Player B: [2, 7, 16] facing South - MP: 130 (throws: 9)
+Player C: [0, 9, 3] facing East - MP: 133 (throws: 15)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 23 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 1 (continuing West)
+Cell multiplied Player A movement points by 2 (now: 126)
+Player A moved to [0, 3, 6] with 126 movement points
+Player A: [0, 3, 6] facing West - MP: 126 (throws: 13)
+
+--- Player B's Turn ---
+Player B rolled movement: 2 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 128 movement points
+Player B: [2, 7, 16] facing South - MP: 128 (throws: 10)
+
+--- Player C's Turn ---
+Player C rolled direction dice 4Player C rolled movement: 1, direction: Empty (keep current)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 131 movement points
+Player C: [0, 9, 3] facing East - MP: 131 (throws: 16)
+
+=== ROUND 23 GAME STATE ===
+Player A: [0, 3, 6] facing West - MP: 126 (throws: 13)
+Player B: [2, 7, 16] facing South - MP: 128 (throws: 10)
+Player C: [0, 9, 3] facing East - MP: 131 (throws: 16)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 24 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 3 (continuing West)
+Cell consumed 2 movement points from Player A (now: 124)
+Cell gave Player A bonus +2 movement points (now: 126)
+Player A moved to [0, 0, 6] with 126 movement points
+Player A: [0, 0, 6] facing West - MP: 126 (throws: 14)
+
+--- Player B's Turn ---
+Player B rolled movement: 5 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 126 movement points
+Player B: [2, 7, 16] facing South - MP: 126 (throws: 11)
+
+--- Player C's Turn ---
+Player C rolled movement: 5 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 129 movement points
+Player C: [0, 9, 3] facing East - MP: 129 (throws: 17)
+
+=== ROUND 24 GAME STATE ===
+Player A: [0, 0, 6] facing West - MP: 126 (throws: 14)
+Player B: [2, 7, 16] facing South - MP: 126 (throws: 11)
+Player C: [0, 9, 3] facing East - MP: 129 (throws: 17)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 25 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes DOWN
+Stair 2 now goes DOWN
+Stair 3 now goes DOWN
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled movement: 4 (continuing West)
+Player A blocked after 0 steps
+Player A moved to [0, 0, 6] with 124 movement points
+Player A: [0, 0, 6] facing West - MP: 124 (throws: 15)
+
+--- Player B's Turn ---
+Player B rolled direction dice 4Player B rolled movement: 3, direction: Empty (keep current)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 124 movement points
+Player B: [2, 7, 16] facing South - MP: 124 (throws: 12)
+
+--- Player C's Turn ---
+Player C rolled movement: 6 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 127 movement points
+Player C: [0, 9, 3] facing East - MP: 127 (throws: 18)
+
+=== ROUND 25 GAME STATE ===
+Player A: [0, 0, 6] facing West - MP: 124 (throws: 15)
+Player B: [2, 7, 16] facing South - MP: 124 (throws: 12)
+Player C: [0, 9, 3] facing East - MP: 127 (throws: 18)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 26 ==========
+
+--- Player A's Turn ---
+Player A rolled direction dice 1Player A rolled movement: 6, direction: East
+Cell consumed 2 movement points from Player A (now: 122)
+Cell multiplied Player A movement points by 2 (now: 244)
+Cell consumed 1 movement points from Player A (now: 243)
+Cell consumed 1 movement points from Player A (now: 242)
+Player A moved to [0, 6, 6] with 242 movement points
+Player A: [0, 6, 6] facing East - MP: 242 (throws: 16)
+
+--- Player B's Turn ---
+Player B rolled movement: 5 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 122 movement points
+Player B: [2, 7, 16] facing South - MP: 122 (throws: 13)
+
+--- Player C's Turn ---
+Player C rolled movement: 2 (continuing East)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 3] with 125 movement points
+Player C: [0, 9, 3] facing East - MP: 125 (throws: 19)
+
+=== ROUND 26 GAME STATE ===
+Player A: [0, 6, 6] facing East - MP: 242 (throws: 16)
+Player B: [2, 7, 16] facing South - MP: 122 (throws: 13)
+Player C: [0, 9, 3] facing East - MP: 125 (throws: 19)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 27 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 5 (continuing East)
+Cell multiplied Player A movement points by 2 (now: 484)
+Cell consumed 2 movement points from Player A (now: 482)
+Cell gave Player A bonus +2 movement points (now: 484)
+Player A blocked after 3 steps
+Player A moved to [0, 9, 6] with 482 movement points
+Player A: [0, 9, 6] facing East - MP: 482 (throws: 17)
+
+--- Player B's Turn ---
+Player B rolled movement: 4 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 120 movement points
+Player B: [2, 7, 16] facing South - MP: 120 (throws: 14)
+
+--- Player C's Turn ---
+Player C rolled direction dice 2Player C rolled movement: 6, direction: South
+Cell consumed 1 movement points from Player C (now: 124)
+Player C captured Player A! Sending to starting area.
+Cell gave Player C bonus +2 movement points (now: 126)
+Cell multiplied Player C movement points by 2 (now: 252)
+Cell gave Player C bonus +2 movement points (now: 254)
+Cell consumed 4 movement points from Player C (now: 250)
+Player C moved to [0, 9, 9] with 250 movement points
+Player C: [0, 9, 9] facing South - MP: 250 (throws: 20)
+
+=== ROUND 27 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 482 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 120 (throws: 14)
+Player C: [0, 9, 9] facing South - MP: 250 (throws: 20)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 28 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 480 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled movement: 2 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 118 movement points
+Player B: [2, 7, 16] facing South - MP: 118 (throws: 15)
+
+--- Player C's Turn ---
+Player C rolled movement: 6 (continuing South)
+Cell consumed 3 movement points from Player C (now: 247)
+Cell gave Player C bonus +1 movement points (now: 248)
+Cell consumed 4 movement points from Player C (now: 244)
+Cell consumed 1 movement points from Player C (now: 243)
+Player C moved to [0, 9, 15] with 243 movement points
+Player C: [0, 9, 15] facing South - MP: 243 (throws: 21)
+
+=== ROUND 28 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 480 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 118 (throws: 15)
+Player C: [0, 9, 15] facing South - MP: 243 (throws: 21)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 29 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 478 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled direction dice 2Player B rolled movement: 5, direction: South
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 116 movement points
+Player B: [2, 7, 16] facing South - MP: 116 (throws: 16)
+
+--- Player C's Turn ---
+Player C rolled movement: 4 (continuing South)
+Cell consumed 1 movement points from Player C (now: 242)
+Cell gave Player C bonus +2 movement points (now: 244)
+Cell gave Player C bonus +1 movement points (now: 245)
+Cell consumed 1 movement points from Player C (now: 244)
+Player C moved to [0, 9, 19] with 244 movement points
+Player C: [0, 9, 19] facing South - MP: 244 (throws: 22)
+
+=== ROUND 29 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 478 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 116 (throws: 16)
+Player C: [0, 9, 19] facing South - MP: 244 (throws: 22)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 30 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes UP
+Stair 2 now goes UP
+Stair 3 now goes UP
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled 4 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 476 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled movement: 1 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 114 movement points
+Player B: [2, 7, 16] facing South - MP: 114 (throws: 17)
+
+--- Player C's Turn ---
+Player C rolled movement: 3 (continuing South)
+Player C is disoriented! +50 points, moved to entrance, random movement for 4 turns!
+Player C moved to [0, 9, 19] with 294 movement points
+Player C: [0, 9, 19] facing North - MP: 294 [DISORIENTED: 4 turns] (throws: 23)
+
+=== ROUND 30 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 476 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 114 (throws: 17)
+Player C: [0, 9, 19] facing North - MP: 294 [DISORIENTED: 4 turns] (throws: 23)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 31 ==========
+
+--- Player A's Turn ---
+Player A rolled 4 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 474 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled movement: 3 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 112 movement points
+Player B: [2, 7, 16] facing South - MP: 112 (throws: 18)
+
+--- Player C's Turn ---
+Player C is disoriented! Moving randomly North for 6 steps (3 turns left)
+Cell gave Player C bonus +1 movement points (now: 295)
+Cell gave Player C bonus +2 movement points (now: 297)
+Cell consumed 1 movement points from Player C (now: 296)
+Cell consumed 1 movement points from Player C (now: 295)
+Cell consumed 4 movement points from Player C (now: 291)
+Player C moved to [0, 9, 13] with 291 movement points
+Player C: [0, 9, 13] facing North - MP: 291 [DISORIENTED: 3 turns] (throws: 24)
+
+=== ROUND 31 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 474 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 112 (throws: 18)
+Player C: [0, 9, 13] facing North - MP: 291 [DISORIENTED: 3 turns] (throws: 24)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 32 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 472 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled movement: 1 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 110 movement points
+Player B: [2, 7, 16] facing South - MP: 110 (throws: 19)
+
+--- Player C's Turn ---
+Player C is disoriented! Moving randomly East for 5 steps (2 turns left)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 13] with 289 movement points
+Player C: [0, 9, 13] facing North - MP: 289 [DISORIENTED: 2 turns] (throws: 25)
+
+=== ROUND 32 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 472 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 110 (throws: 19)
+Player C: [0, 9, 13] facing North - MP: 289 [DISORIENTED: 2 turns] (throws: 25)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 33 ==========
+
+--- Player A's Turn ---
+Player A rolled 6 to enter maze
+Player A entered the maze at [0, 5, 12]!
+Cell gave Player A bonus +2 movement points (now: 474)
+Player A: [0, 5, 12] facing East - MP: 474 (throws: 1)
+
+--- Player B's Turn ---
+Player B rolled direction dice 4Player B rolled movement: 2, direction: Empty (keep current)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 108 movement points
+Player B: [2, 7, 16] facing South - MP: 108 (throws: 20)
+
+--- Player C's Turn ---
+Player C is disoriented! Moving randomly East for 6 steps (1 turns left)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 13] with 287 movement points
+Player C: [0, 9, 13] facing North - MP: 287 [DISORIENTED: 1 turns] (throws: 26)
+
+=== ROUND 33 GAME STATE ===
+Player A: [0, 5, 12] facing East - MP: 474 (throws: 1)
+Player B: [2, 7, 16] facing South - MP: 108 (throws: 20)
+Player C: [0, 9, 13] facing North - MP: 287 [DISORIENTED: 1 turns] (throws: 26)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 34 ==========
+
+--- Player A's Turn ---
+Player A rolled movement: 6 (continuing East)
+Cell gave Player A bonus +1 movement points (now: 475)
+Cell gave Player A bonus +1 movement points (now: 476)
+Player A blocked after 4 steps
+Player A moved to [0, 9, 12] with 474 movement points
+Player A: [0, 9, 12] facing East - MP: 474 (throws: 2)
+
+--- Player B's Turn ---
+Player B rolled movement: 4 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 106 movement points
+Player B: [2, 7, 16] facing South - MP: 106 (throws: 21)
+
+--- Player C's Turn ---
+Player C is disoriented! Moving randomly East for 1 steps (0 turns left)
+Player C blocked after 0 steps
+Player C moved to [0, 9, 13] with 285 movement points
+Player C: [0, 9, 13] facing North - MP: 285 (throws: 27)
+
+=== ROUND 34 GAME STATE ===
+Player A: [0, 9, 12] facing East - MP: 474 (throws: 2)
+Player B: [2, 7, 16] facing South - MP: 106 (throws: 21)
+Player C: [0, 9, 13] facing North - MP: 285 (throws: 27)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 35 ==========
+
+*** STAIR DIRECTIONS CHANGING! ***
+Stair 1 now goes UP
+Stair 2 now goes UP
+Stair 3 now goes UP
+*** END STAIR DIRECTION CHANGE ***
+
+
+--- Player A's Turn ---
+Player A rolled movement: 5 (continuing East)
+Player A blocked after 0 steps
+Player A moved to [0, 9, 12] with 472 movement points
+Player A: [0, 9, 12] facing East - MP: 472 (throws: 3)
+
+--- Player B's Turn ---
+Player B rolled movement: 6 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 104 movement points
+Player B: [2, 7, 16] facing South - MP: 104 (throws: 22)
+
+--- Player C's Turn ---
+Player C rolled direction dice 0Player C rolled movement: 1, direction: North
+Player C captured Player A! Sending to starting area.
+Cell gave Player C bonus +1 movement points (now: 286)
+Player C moved to [0, 9, 12] with 286 movement points
+Player C: [0, 9, 12] facing North - MP: 286 (throws: 28)
+
+=== ROUND 35 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 472 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 104 (throws: 22)
+Player C: [0, 9, 12] facing North - MP: 286 (throws: 28)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 36 ==========
+
+--- Player A's Turn ---
+Player A rolled 2 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 470 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled movement: 3 (continuing South)
+Player B blocked after 0 steps
+Player B moved to [2, 7, 16] with 102 movement points
+Player B: [2, 7, 16] facing South - MP: 102 (throws: 23)
+
+--- Player C's Turn ---
+Player C rolled movement: 6 (continuing North)
+Cell consumed 3 movement points from Player C (now: 283)
+Cell consumed 4 movement points from Player C (now: 279)
+Cell gave Player C bonus +2 movement points (now: 281)
+Cell multiplied Player C movement points by 2 (now: 562)
+Cell gave Player C bonus +2 movement points (now: 564)
+Player C moved to [0, 9, 6] with 564 movement points
+Player C: [0, 9, 6] facing North - MP: 564 (throws: 29)
+
+=== ROUND 36 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 470 (throws: 0)
+Player B: [2, 7, 16] facing South - MP: 102 (throws: 23)
+Player C: [0, 9, 6] facing North - MP: 564 (throws: 29)
+Flag: [2, 2, 16]
+==========================
+
+
+========== ROUND 37 ==========
+
+--- Player A's Turn ---
+Player A rolled 4 to enter maze
+Player A stays in starting area
+Player A: Starting area [0, 6, 12] - MP: 468 (throws: 0)
+
+--- Player B's Turn ---
+Player B rolled direction dice 3Player B rolled movement: 5, direction: West
+Cell consumed 4 movement points from Player B (now: 98)
+Cell gave Player B bonus +4 movement points (now: 102)
+Cell multiplied Player B movement points by 3 (now: 306)
+Player B moved to [2, 2, 16] with 306 movement points
+
+🎉 GAME OVER! Player B captured the flag! 🎉
+Player B: [2, 2, 16] facing West - MP: 306 (throws: 24)
+
+🏆 CONGRATULATIONS PLAYER B! 🏆
+You successfully navigated the enhanced maze and captured the flag!
+Final Statistics:
+Player A: 468 movement points, 0 dice throws
+Player B: 306 movement points, 24 dice throws
+Player C: 564 movement points, 29 dice throws
+
+=== ROUND 37 GAME STATE ===
+Player A: Starting area [0, 6, 12] - MP: 468 (throws: 0)
+Player B: [2, 2, 16] facing West - MP: 306 (throws: 24)
+Player C: [0, 9, 6] facing North - MP: 564 (throws: 29)
+Flag: [2, 2, 16]
+==========================
+

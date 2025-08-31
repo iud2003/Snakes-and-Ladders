@@ -740,7 +740,7 @@ const char* bawana_effect_to_string(BawanaEffect effect) {
         default: return "Unknown";
     }
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void play_turn(Game* game, int player_index) {
     Player* player = &game->players[player_index];
     
@@ -808,6 +808,7 @@ void play_turn(Game* game, int player_index) {
             // Roll direction dice every 4th throw
             if (player->dice_throw_count % 4 == 0) {
                 Direction dir_roll = roll_direction_dice();
+                printf("Player %c rolled direction dice %d",player->name, dir_roll);
                 printf("Player %c rolled movement: %d, direction: %s\n", 
                        player->name, movement_roll, 
                        (dir_roll == EMPTY) ? "Empty (keep current)" : direction_to_string(dir_roll));
@@ -843,6 +844,7 @@ void play_turn(Game* game, int player_index) {
     
     print_player_status(player);
 }
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 void play_game(Game* game) {
     while (!game->game_over) {
@@ -860,8 +862,7 @@ void play_game(Game* game) {
             
             if (game->game_over) break;
             
-            printf("\nPress Enter to continue...");
-            getchar();
+            
         }
         
         if (!game->game_over) {
