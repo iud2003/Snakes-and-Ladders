@@ -18,11 +18,11 @@
 
 // Direction enumeration
 typedef enum {
-    NORTH = 0,
-    EAST = 1,
-    SOUTH = 2,
-    WEST = 3,
-    EMPTY = 4
+    EMPTY = 1,
+    NORTH = 2,
+    EAST = 3,
+    SOUTH = 4,
+    WEST = 5
 } Direction;
 
 // Cell effect types
@@ -336,12 +336,12 @@ int roll_movement_dice() {
 Direction roll_direction_dice() {
     int roll = rand() % 6;
     switch(roll) {
-        case 0: return EMPTY;
-        case 1: return NORTH;
-        case 2: return EAST;
-        case 3: return SOUTH;
-        case 4: return WEST;
-        case 5: return EMPTY;
+        case 1: return EMPTY;   // Face 1 -> Empty
+        case 2: return NORTH;   // Face 2 -> North
+        case 3: return EAST;    // Face 3 -> East
+        case 4: return SOUTH;   // Face 4 -> South
+        case 5: return WEST;    // Face 5 -> West
+        case 6: return EMPTY;   // Face 6 -> Empty
         default: return EMPTY;
     }
 }
@@ -808,10 +808,9 @@ void play_turn(Game* game, int player_index) {
             // Roll direction dice every 4th throw
             if (player->dice_throw_count % 4 == 0) {
                 Direction dir_roll = roll_direction_dice();
-                printf("Player %c rolled direction dice %d",player->name, dir_roll);
-                printf("Player %c rolled movement: %d, direction: %s\n", 
-                       player->name, movement_roll, 
-                       (dir_roll == EMPTY) ? "Empty (keep current)" : direction_to_string(dir_roll));
+                printf("Player %c rolled direction dice %d  , Player changed the direction into %s \n",player->name, dir_roll,(dir_roll == EMPTY) ? "Empty (keep current)" : direction_to_string(dir_roll));
+                printf("Player %c rolled movement: %d,\n ", 
+                       player->name, movement_roll);
                 
                 if (dir_roll != EMPTY) {
                     player->direction = dir_roll;
