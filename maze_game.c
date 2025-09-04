@@ -119,7 +119,7 @@ bool can_move_single_step(Game* game, int floor, int from_w, int from_l, int to_
 void move_player_with_effects(Game* game, Player* player, Direction dir, int steps);
 void apply_cell_effects(Game* game, Player* player, int floor, int width, int length);
 void apply_bawana_effect(Game* game, Player* player);
-void check_stairs_and_poles_during_movement(Game* game, Player* player, int* remaining_steps, Direction dir);
+bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps, Direction dir);
 void capture_player(Game* game, int capturer_index, int captured_index);
 bool is_position_occupied(Game* game, int floor, int width, int length, int exclude_player);
 void change_stair_directions(Game* game);
@@ -500,49 +500,56 @@ void apply_bawana_effect(Game* game, Player* player) {
     player->in_bawana = false;
 }
 
-void check_stairs_and_poles_during_movement(Game* game, Player* player, int* remaining_steps, Direction dir) {
-    // Check stairs
+bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps, Direction dir) {
+    // Check stairs - look for stairs at current position
     for (int i = 0; i < game->num_stairs; i++) {
         Stair* stair = &game->stairs[i];
         
-        // Check if player stepped on stair
-        bool on_stair_start = (player->floor == stair->start_floor && 
-                              player->width == stair->start_width && 
-                              player->length == stair->start_length);
-        bool on_stair_end = (player->floor == stair->end_floor && 
-                            player->width == stair->end_width && 
-                            player->length == stair->end_length);
-        
-        if (on_stair_start && stair->up_direction) {
+        // Check if player is on stair start position and can go up
+        if (player->floor == stair->start_floor && 
+            player->width == stair->start_width && 
+            player->length == stair->start_length && 
+            stair->up_direction) {
+            
             player->floor = stair->end_floor;
             player->width = stair->end_width;
             player->length = stair->end_length;
-            printf("Player %c used stairs up! Now at [%d, %d, %d], %d steps remaining\n", 
+            printf("Player %c used stairs UP during movement! Now at [%d, %d, %d], %d steps remaining\n", 
                    player->name, player->floor, player->width, player->length, *remaining_steps);
-            return;
-        } else if (on_stair_end && !stair->up_direction) {
+            return true;
+        }
+        
+        // Check if player is on stair end position and can go down
+        if (player->floor == stair->end_floor && 
+            player->width == stair->end_width && 
+            player->length == stair->end_length && 
+            !stair->up_direction) {
+            
             player->floor = stair->start_floor;
             player->width = stair->start_width;
             player->length = stair->start_length;
-            printf("Player %c used stairs down! Now at [%d, %d, %d], %d steps remaining\n", 
+            printf("Player %c used stairs DOWN during movement! Now at [%d, %d, %d], %d steps remaining\n", 
                    player->name, player->floor, player->width, player->length, *remaining_steps);
-            return;
+            return true;
         }
     }
     
-    // Check poles
+    // Check poles - can only go down
     for (int i = 0; i < game->num_poles; i++) {
         Pole* pole = &game->poles[i];
         
         if (player->width == pole->width && player->length == pole->length) {
-            if (player->floor >= pole->start_floor && player->floor > pole->end_floor) {
+            // Can slide down if on higher floor than pole's end floor
+            if (player->floor > pole->end_floor && player->floor <= pole->start_floor) {
                 player->floor = pole->end_floor;
-                printf("Player %c slid down pole! Now at [%d, %d, %d], %d steps remaining\n", 
+                printf("Player %c slid down pole during movement! Now at [%d, %d, %d], %d steps remaining\n", 
                        player->name, player->floor, player->width, player->length, *remaining_steps);
-                return;
+                return true;
             }
         }
     }
+    
+    return false;
 }
 
 void capture_player(Game* game, int capturer_index, int captured_index) {
@@ -614,7 +621,9 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
     }
     
     // Move step by step to handle stairs/poles and cell effects
-    for (int step = 0; step < effective_steps; step++) {
+    int remaining_steps = effective_steps;
+    
+    while (remaining_steps > 0) {
         int new_width = player->width;
         int new_length = player->length;
         
@@ -629,12 +638,12 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
         
         // Check if move is possible
         if (!can_move_single_step(game, player->floor, player->width, player->length, new_width, new_length)) {
-            printf("Player %c blocked after %d steps\n", player->name, step);
+            printf("Player %c blocked after %d steps\n", player->name, effective_steps - remaining_steps);
             player->movement_points -= 2; // Penalty for blocked movement
             break;
         }
         
-        // Check for player capture
+        // Check for player capture before moving
         int occupied_by = -1;
         for (int i = 0; i < MAX_PLAYERS; i++) {
             if (game->players[i].in_maze && 
@@ -649,6 +658,7 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
         // Move player
         player->width = new_width;
         player->length = new_length;
+        remaining_steps--;
         
         // Handle player capture
         if (occupied_by >= 0) {
@@ -669,9 +679,11 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
         
         if (player->movement_points <= 0) break;
         
-        // Check for stairs and poles during movement
-        int remaining = effective_steps - step - 1;
-        check_stairs_and_poles_during_movement(game, player, &remaining, dir);
+        // Check for stairs and poles at current position - Rule 4 implementation
+        if (check_and_use_stairs_poles(game, player, &remaining_steps, dir)) {
+            // Player used stairs/pole, continue with remaining movement from new position
+            continue;
+        }
         
         // Check if in Bawana
         if (is_in_bawana(player->width, player->length)) {
