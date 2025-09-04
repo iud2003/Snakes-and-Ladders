@@ -119,7 +119,7 @@ bool can_move_single_step(Game* game, int floor, int from_w, int from_l, int to_
 void move_player_with_effects(Game* game, Player* player, Direction dir, int steps);
 void apply_cell_effects(Game* game, Player* player, int floor, int width, int length);
 void apply_bawana_effect(Game* game, Player* player);
-bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps, Direction dir);
+bool check_and_use_stairs_poles(Game* game, Player* player);
 void capture_player(Game* game, int capturer_index, int captured_index);
 bool is_position_occupied(Game* game, int floor, int width, int length, int exclude_player);
 void change_stair_directions(Game* game);
@@ -500,7 +500,7 @@ void apply_bawana_effect(Game* game, Player* player) {
     player->in_bawana = false;
 }
 
-bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps, Direction dir) {
+bool check_and_use_stairs_poles(Game* game, Player* player) {
     // Check stairs - look for stairs at current position
     for (int i = 0; i < game->num_stairs; i++) {
         Stair* stair = &game->stairs[i];
@@ -514,8 +514,8 @@ bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps
             player->floor = stair->end_floor;
             player->width = stair->end_width;
             player->length = stair->end_length;
-            printf("Player %c used stairs UP during movement! Now at [%d, %d, %d], %d steps remaining\n", 
-                   player->name, player->floor, player->width, player->length, *remaining_steps);
+            printf("Player %c used stairs UP during movement! Now at [%d, %d, %d]\n", 
+                   player->name, player->floor, player->width, player->length);
             return true;
         }
         
@@ -528,8 +528,8 @@ bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps
             player->floor = stair->start_floor;
             player->width = stair->start_width;
             player->length = stair->start_length;
-            printf("Player %c used stairs DOWN during movement! Now at [%d, %d, %d], %d steps remaining\n", 
-                   player->name, player->floor, player->width, player->length, *remaining_steps);
+            printf("Player %c used stairs DOWN during movement! Now at [%d, %d, %d]\n", 
+                   player->name, player->floor, player->width, player->length);
             return true;
         }
     }
@@ -542,8 +542,8 @@ bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps
             // Can slide down if on higher floor than pole's end floor
             if (player->floor > pole->end_floor && player->floor <= pole->start_floor) {
                 player->floor = pole->end_floor;
-                printf("Player %c slid down pole during movement! Now at [%d, %d, %d], %d steps remaining\n", 
-                       player->name, player->floor, player->width, player->length, *remaining_steps);
+                printf("Player %c slid down pole during movement! Now at [%d, %d, %d]\n", 
+                       player->name, player->floor, player->width, player->length);
                 return true;
             }
         }
@@ -551,22 +551,40 @@ bool check_and_use_stairs_poles(Game* game, Player* player, int* remaining_steps
     
     return false;
 }
-
 void capture_player(Game* game, int capturer_index, int captured_index) {
     Player* captured = &game->players[captured_index];
     
-    printf("Player %c captured Player %c! Sending to starting area.\n", 
+    printf("Player %c captured Player %c! Sending to starting position.\n", 
            game->players[capturer_index].name, captured->name);
     
-    // Move captured player to starting area
+    // Move captured player back to their original starting position
     captured->in_maze = false;
     captured->dice_throw_count = 0;
-    switch(captured->name) {
-        case 'A': captured->width = 6; captured->length = 12; break;
-        case 'B': captured->width = 9; captured->length = 8; break;
-        case 'C': captured->width = 9; captured->length = 16; break;
-    }
     captured->floor = 0;
+    
+    switch(captured->name) {
+        case 'A': 
+            captured->width = 6; 
+            captured->length = 12; 
+            captured->direction = NORTH;
+            break;
+        case 'B': 
+            captured->width = 9; 
+            captured->length = 8; 
+            captured->direction = WEST;
+            break;
+        case 'C': 
+            captured->width = 9; 
+            captured->length = 16; 
+            captured->direction = EAST;
+            break;
+    }
+    
+    // Reset any special effects
+    captured->food_poisoning_turns = 0;
+    captured->disoriented_turns = 0;
+    captured->triggered = false;
+    captured->in_bawana = false;
 }
 
 bool is_position_occupied(Game* game, int floor, int width, int length, int exclude_player) {
@@ -620,10 +638,8 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
                player->name, effective_steps, steps);
     }
     
-    // Move step by step to handle stairs/poles and cell effects
-    int remaining_steps = effective_steps;
-    
-    while (remaining_steps > 0) {
+    // Move step by step
+    for (int step = 0; step < effective_steps; step++) {
         int new_width = player->width;
         int new_length = player->length;
         
@@ -638,41 +654,14 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
         
         // Check if move is possible
         if (!can_move_single_step(game, player->floor, player->width, player->length, new_width, new_length)) {
-            printf("Player %c blocked after %d steps\n", player->name, effective_steps - remaining_steps);
+            printf("Player %c blocked after %d steps\n", player->name, step);
             player->movement_points -= 2; // Penalty for blocked movement
             break;
-        }
-        
-        // Check for player capture before moving
-        int occupied_by = -1;
-        for (int i = 0; i < MAX_PLAYERS; i++) {
-            if (game->players[i].in_maze && 
-                game->players[i].floor == player->floor && 
-                game->players[i].width == new_width && 
-                game->players[i].length == new_length) {
-                occupied_by = i;
-                break;
-            }
         }
         
         // Move player
         player->width = new_width;
         player->length = new_length;
-        remaining_steps--;
-        
-        // Handle player capture
-        if (occupied_by >= 0) {
-            int capturer_idx = -1;
-            for (int i = 0; i < MAX_PLAYERS; i++) {
-                if (&game->players[i] == player) {
-                    capturer_idx = i;
-                    break;
-                }
-            }
-            if (capturer_idx >= 0) {
-                capture_player(game, capturer_idx, occupied_by);
-            }
-        }
         
         // Apply cell effects
         apply_cell_effects(game, player, player->floor, player->width, player->length);
@@ -680,15 +669,37 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
         if (player->movement_points <= 0) break;
         
         // Check for stairs and poles at current position - Rule 4 implementation
-        if (check_and_use_stairs_poles(game, player, &remaining_steps, dir)) {
+        if (check_and_use_stairs_poles(game, player)) {
             // Player used stairs/pole, continue with remaining movement from new position
-            continue;
+            // No need to modify step counter - continue normally
         }
         
         // Check if in Bawana
         if (is_in_bawana(player->width, player->length)) {
             apply_bawana_effect(game, player);
             break;
+        }
+    }
+    
+    // Rule 5: Check for player capture ONLY after all movement is complete
+    for (int i = 0; i < MAX_PLAYERS; i++) {
+        Player* other = &game->players[i];
+        if (other != player && other->in_maze && 
+            other->floor == player->floor && 
+            other->width == player->width && 
+            other->length == player->length) {
+            
+            int capturer_idx = -1;
+            for (int j = 0; j < MAX_PLAYERS; j++) {
+                if (&game->players[j] == player) {
+                    capturer_idx = j;
+                    break;
+                }
+            }
+            if (capturer_idx >= 0) {
+                capture_player(game, capturer_idx, i);
+            }
+            break; // Only capture one player per landing
         }
     }
     
@@ -872,18 +883,10 @@ void play_game(Game* game) {
             play_turn(game, i);
             
             if (game->game_over) break;
-            
-            
         }
         
         if (!game->game_over) {
             print_game_state(game);
-            
-            // Safety check to prevent infinite games
-            if (game->round_count <0) {
-                printf("Game reached maximum rounds. Ending game.\n");
-                break;
-            }
         }
     }
     
