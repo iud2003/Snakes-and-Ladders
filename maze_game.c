@@ -868,7 +868,7 @@ void play_game(Game* game) {
             print_game_state(game);
             
             // Safety check to prevent infinite games
-            if (game->round_count > 200) {
+            if (game->round_count <0) {
                 printf("Game reached maximum rounds. Ending game.\n");
                 break;
             }
