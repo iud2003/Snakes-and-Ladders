@@ -504,7 +504,6 @@ bool check_and_use_stairs_poles(Game* game, Player* player) {
     // Check stairs - look for stairs at current position
     for (int i = 0; i < game->num_stairs; i++) {
         Stair* stair = &game->stairs[i];
-        
         // Check if player is on stair start position and can go up
         if (player->floor == stair->start_floor && 
             player->width == stair->start_width && 
