@@ -13,6 +13,7 @@
 #define MAX_WALLS 100
 #define MAX_PLAYERS 3
 #define INITIAL_MOVEMENT_POINTS 100
+#define MAX_MOVEMENT_POINTS 10000  // Cap to prevent overflow
 #define BAWANA_CELLS 16
 #define STAIR_DIRECTION_CHANGE_ROUNDS 5
 
@@ -131,6 +132,15 @@ const char* bawana_effect_to_string(BawanaEffect effect);
 void play_turn(Game* game, int player_index);
 void play_game(Game* game);
 
+// Helper function to cap movement points
+void cap_movement_points(Player* player) {
+    if (player->movement_points > MAX_MOVEMENT_POINTS) {
+        printf("Player %c movement points capped at %d (was %d)\n", 
+               player->name, MAX_MOVEMENT_POINTS, player->movement_points);
+        player->movement_points = MAX_MOVEMENT_POINTS;
+    }
+}
+
 int main() {
     srand(time(NULL));
     
@@ -142,7 +152,7 @@ int main() {
     printf("Players A, B, and C compete with movement points and special effects.\n\n");
     
     printf("Enhanced Features:\n");
-    printf("- Movement Points System (start with 100 points)\n");
+    printf("- Movement Points System (start with 100 points, max %d)\n", MAX_MOVEMENT_POINTS);
     printf("- Cell consumption and bonus effects\n");
     printf("- Player capture mechanics\n");
     printf("- Bawana special area with food effects\n");
@@ -415,31 +425,46 @@ void apply_cell_effects(Game* game, Player* player, int floor, int width, int le
     if (!is_valid_position(floor, width, length)) return;
     
     Cell* cell = &game->maze[floor][width][length];
+    int old_points = player->movement_points;
     
     switch(cell->effect_type) {
         case EFFECT_CONSUMABLE:
             player->movement_points -= cell->effect_value;
             if (cell->effect_value > 0) {
-                printf("Cell consumed %d movement points from Player %c (now: %d)\n", 
-                       cell->effect_value, player->name, player->movement_points);
+                printf("Cell consumed %d movement points from Player %c (%d -> %d)\n", 
+                       cell->effect_value, player->name, old_points, player->movement_points);
             }
             break;
             
         case EFFECT_BONUS_ADD:
             player->movement_points += cell->effect_value;
-            printf("Cell gave Player %c bonus +%d movement points (now: %d)\n", 
-                   player->name, cell->effect_value, player->movement_points);
+            printf("Cell gave Player %c bonus +%d movement points (%d -> %d)\n", 
+                   player->name, cell->effect_value, old_points, player->movement_points);
             break;
             
-        case EFFECT_BONUS_MULTIPLY:
-            player->movement_points *= cell->effect_value;
-            printf("Cell multiplied Player %c movement points by %d (now: %d)\n", 
-                   player->name, cell->effect_value, player->movement_points);
+        case EFFECT_BONUS_MULTIPLY: {
+            // Only apply multiplication if current points are reasonable to avoid overflow
+            if (player->movement_points <= 1000) {
+                player->movement_points *= cell->effect_value;
+                printf("Cell multiplied Player %c movement points by %d (%d -> %d)\n", 
+                       player->name, cell->effect_value, old_points, player->movement_points);
+            } else {
+                // Apply as addition instead to prevent extreme values
+                int bonus = player->movement_points * (cell->effect_value - 1);
+                if (bonus > 500) bonus = 500; // Cap the bonus
+                player->movement_points += bonus;
+                printf("Cell gave Player %c large bonus +%d movement points (%d -> %d)\n", 
+                       player->name, bonus, old_points, player->movement_points);
+            }
             break;
+        }
             
         default:
             break;
     }
+    
+    // Cap movement points to prevent overflow
+    cap_movement_points(player);
     
     // Check if movement points fell to zero or negative
     if (player->movement_points <= 0) {
@@ -452,6 +477,7 @@ void apply_bawana_effect(Game* game, Player* player) {
     if (!is_in_bawana(player->width, player->length)) return;
     
     Cell* cell = &game->maze[0][player->width][player->length];
+    int old_points = player->movement_points;
     
     switch(cell->bawana_effect) {
         case BAWANA_FOOD_POISONING:
@@ -461,38 +487,46 @@ void apply_bawana_effect(Game* game, Player* player) {
             
         case BAWANA_DISORIENTED:
             player->movement_points += 50;
+            cap_movement_points(player);
             player->disoriented_turns = 4;
             player->floor = 0;
             player->width = 9;
             player->length = 19;
             player->direction = NORTH;
-            printf("Player %c is disoriented! +50 points, moved to entrance, random movement for 4 turns!\n", player->name);
+            printf("Player %c is disoriented! +50 points (%d -> %d), moved to entrance, random movement for 4 turns!\n", 
+                   player->name, old_points, player->movement_points);
             break;
             
         case BAWANA_TRIGGERED:
             player->movement_points += 50;
+            cap_movement_points(player);
             player->triggered = true;
             player->floor = 0;
             player->width = 9;
             player->length = 19;
             player->direction = NORTH;
-            printf("Player %c is triggered! +50 points, moved to entrance, moves twice as fast!\n", player->name);
+            printf("Player %c is triggered! +50 points (%d -> %d), moved to entrance, moves twice as fast!\n", 
+                   player->name, old_points, player->movement_points);
             break;
             
         case BAWANA_HAPPY:
             player->movement_points += 200;
+            cap_movement_points(player);
             player->floor = 0;
             player->width = 9;
             player->length = 19;
             player->direction = NORTH;
-            printf("Player %c is happy! +200 points, moved to entrance!\n", player->name);
+            printf("Player %c is happy! +200 points (%d -> %d), moved to entrance!\n", 
+                   player->name, old_points, player->movement_points);
             break;
             
         case BAWANA_RANDOM_POINTS:
         default: {
             int bonus = (rand() % 91) + 10; // 10-100 points
             player->movement_points += bonus;
-            printf("Player %c got %d random movement points in Bawana!\n", player->name, bonus);
+            cap_movement_points(player);
+            printf("Player %c got %d random movement points in Bawana! (%d -> %d)\n", 
+                   player->name, bonus, old_points, player->movement_points);
             break;
         }
     }
@@ -550,6 +584,7 @@ bool check_and_use_stairs_poles(Game* game, Player* player) {
     
     return false;
 }
+
 void capture_player(Game* game, int capturer_index, int captured_index) {
     Player* captured = &game->players[captured_index];
     
@@ -579,11 +614,14 @@ void capture_player(Game* game, int capturer_index, int captured_index) {
             break;
     }
     
-    // Reset any special effects
+    // Reset any special effects but keep movement points reasonable
     captured->food_poisoning_turns = 0;
     captured->disoriented_turns = 0;
     captured->triggered = false;
     captured->in_bawana = false;
+    
+    // Reset movement points to initial value when captured
+    captured->movement_points = INITIAL_MOVEMENT_POINTS;
 }
 
 bool is_position_occupied(Game* game, int floor, int width, int length, int exclude_player) {
@@ -621,7 +659,7 @@ void transport_to_bawana(Game* game, Player* player) {
     player->width = bawana_positions[idx][0];
     player->length = bawana_positions[idx][1];
     player->in_bawana = true;
-    player->movement_points = 1; // Give 1 point to prevent immediate re-transport
+    player->movement_points = 10; // Give 10 points to prevent immediate re-transport
     
     printf("Player %c transported to Bawana at [0, %d, %d]!\n", 
            player->name, player->width, player->length);
@@ -658,22 +696,34 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
             break;
         }
         
-        // Move player
+        // Move player to the new position
         player->width = new_width;
         player->length = new_length;
         
-        // Apply cell effects
+        printf("  Step %d: Player %c moved to [%d, %d, %d]\n", 
+               step + 1, player->name, player->floor, player->width, player->length);
+        
+        // Apply cell effects at current position
         apply_cell_effects(game, player, player->floor, player->width, player->length);
         
         if (player->movement_points <= 0) break;
         
-        // Check for stairs and poles at current position - Rule 4 implementation
+        // Rule 4: Check for stairs and poles at current position during movement
         if (check_and_use_stairs_poles(game, player)) {
-            // Player used stairs/pole, continue with remaining movement from new position
-            // No need to modify step counter - continue normally
+            // Player used stairs/pole, they are now at a new position
+            // Continue remaining movement from the new position
+            int remaining_steps = effective_steps - step - 1;
+            if (remaining_steps > 0) {
+                printf("  Continuing %d remaining steps from new position [%d, %d, %d]\n", 
+                       remaining_steps, player->floor, player->width, player->length);
+                
+                // Recursively move remaining steps from new position
+                move_player_with_effects(game, player, dir, remaining_steps);
+                return; // Exit current movement loop as remaining movement is handled
+            }
         }
         
-        // Check if in Bawana
+        // Check if in Bawana (this ends movement immediately)
         if (is_in_bawana(player->width, player->length)) {
             apply_bawana_effect(game, player);
             break;
@@ -702,7 +752,7 @@ void move_player_with_effects(Game* game, Player* player, Direction dir, int ste
         }
     }
     
-    printf("Player %c moved to [%d, %d, %d] with %d movement points\n", 
+    printf("Player %c final position: [%d, %d, %d] with %d movement points\n", 
            player->name, player->floor, player->width, player->length, player->movement_points);
 }
 
@@ -762,7 +812,7 @@ const char* bawana_effect_to_string(BawanaEffect effect) {
         default: return "Unknown";
     }
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void play_turn(Game* game, int player_index) {
     Player* player = &game->players[player_index];
     
@@ -812,6 +862,7 @@ void play_turn(Game* game, int player_index) {
         } else {
             printf("Player %c stays in starting area\n", player->name);
             player->movement_points -= 2; // Cost for failed entry attempt
+            cap_movement_points(player); // Ensure points don't go negative
         }
     } else {
         // Player is in maze
@@ -830,8 +881,9 @@ void play_turn(Game* game, int player_index) {
             // Roll direction dice every 4th throw
             if (player->dice_throw_count % 4 == 0) {
                 Direction dir_roll = roll_direction_dice();
-                printf("Player %c rolled direction dice %d  , Player changed the direction into %s \n",player->name, dir_roll,(dir_roll == EMPTY) ? "Empty (keep current)" : direction_to_string(dir_roll));
-                printf("Player %c rolled movement: %d,\n ", 
+                printf("Player %c rolled direction dice %d, Player changed the direction into %s\n",
+                       player->name, dir_roll, (dir_roll == EMPTY) ? "Empty (keep current)" : direction_to_string(dir_roll));
+                printf("Player %c rolled movement: %d\n", 
                        player->name, movement_roll);
                 
                 if (dir_roll != EMPTY) {
@@ -865,7 +917,6 @@ void play_turn(Game* game, int player_index) {
     
     print_player_status(player);
 }
-/////////////////////////////////////////////////////////////////////////////////////////////
 
 void play_game(Game* game) {
     while (!game->game_over) {
@@ -886,6 +937,13 @@ void play_game(Game* game) {
         
         if (!game->game_over) {
             print_game_state(game);
+        }
+        
+        // Add game length limit to prevent infinite games
+        if (game->round_count > 1000) {
+            printf("\nGame ended due to round limit! No winner declared.\n");
+            game->game_over = true;
+            break;
         }
     }
     
